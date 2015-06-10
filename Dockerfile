@@ -1,11 +1,9 @@
 FROM pataquets/ubuntu:trusty
 
 RUN \
-  apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y wget && \
-  echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list && \
-  wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add - && \
+    apt-key adv --keyserver hkp://hkps.pool.sks-keyservers.net --recv-keys 548C16BF && \
+  echo "deb http://apt.newrelic.com/debian/ newrelic non-free" >> /etc/apt/sources.list.d/newrelic.list && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
     apt-get install -y newrelic-daemon && \
