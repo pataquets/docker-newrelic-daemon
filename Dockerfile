@@ -11,4 +11,3 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT [ "newrelic-daemon", "-f", "--logfile", "/dev/tty" ]
-CMD [ "-s" ]
