@@ -10,4 +10,4 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT [ "newrelic-daemon", "-f", "--logfile", "/dev/tty" ]
+ENTRYPOINT [ "newrelic-daemon", "-f", "--logfile", "/dev/stdout" ]
